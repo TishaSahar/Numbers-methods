@@ -10,7 +10,7 @@ struct angle {
 
 	double rad;
 
-	void toRad()  { rad = (grad / 57.2958) + (min / (60.0 * 57.2958)) + (sec / (3600.0 * 57.2958)); }
+	void toRad() { rad = (grad / 57.2958) + (min / (60.0 * 57.2958)) + (sec / (3600.0 * 57.2958)); }
 	void toGrad() { grad = round(rad * 0.017453);  min = 0.000291 * rad; sec = 0.000005 * rad; }
 };
 
@@ -18,12 +18,10 @@ struct angle {
 double fac(int n);
 
 
-double sinA (angle a, int numAftPnt);
-double cosA (angle a, double numAftPnt);
+double sinA(angle a, int numAftPnt);
+double cosA(angle a, double numAftPnt);
 
-double sh  (angle a, double numAftPnt); 
-double ch  (angle a, double numAftPnt);
+double shA(double value, double numAftPnt);
+double chA(double value, double numAftPnt);
 
 double lnA(double x, double numAftPnt);
-
-
