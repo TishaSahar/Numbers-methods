@@ -28,8 +28,8 @@ double cosA(angle a, double numAftPnt) {
     return cos;
 }
 
-double sh(angle a, double numAftPnt);
-double ch(angle a, double numAftPnt);
+double shA(double  a, double numAftPnt) { return a; }
+double chA(double  a, double numAftPnt) { return a; }
 
 double lnA(double x, double numAftPnt) {
     double ln = 0.0;

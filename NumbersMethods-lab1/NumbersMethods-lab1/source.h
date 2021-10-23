@@ -21,8 +21,8 @@ double fac(int n);
 double sinA (angle a, int numAftPnt);
 double cosA (angle a, double numAftPnt);
 
-double sh  (angle a, double numAftPnt); 
-double ch  (angle a, double numAftPnt);
+double shA  (double a, double numAftPnt); 
+double chA  (double a, double numAftPnt);
 
 double lnA(double x, double numAftPnt);
 

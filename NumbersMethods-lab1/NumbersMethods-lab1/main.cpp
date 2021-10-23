@@ -1,5 +1,6 @@
 #include "source.h"
 #include <conio.h>
+#include <iomanip>
 
 int main() {
 
@@ -47,23 +48,40 @@ int main() {
 					std::cin >> nAp;
 
 					std::cout << "sin(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
-									    << sinA(angle, nAp) << std::endl;
+									    << std::setprecision(nAp) << sinA(angle, nAp) << std::endl;
 					_getch();
 					break;
 				case '4': 
-					angle.toRad();
+					angle.toRad();	
 					std::cout << "Precision = ";
 					std::cin >> nAp;
 
 					std::cout << "cos(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
-						<< cosA(angle, nAp) << std::endl;
+						<< std::setprecision(nAp) << cosA(angle, nAp) << std::endl;
 					_getch();
 					break;
-				case '5': 
+				case '5': 	
+					std::cout << "Precision = ";
+					std::cin >> nAp;
+					std::cout << "ln(" << value << ") = " << lnA(value, nAp) << std::endl;
 					
+					_getch();
 					break;
-				case '6': break;
-				case '7': break;
+				case '6':
+
+					std::cout << "Precision = ";
+					std::cin >> nAp;
+					std::cout << "shA(" << value << ") = " << shA(value, nAp) << std::endl;
+
+					_getch();
+					break;
+				case '7':
+					std::cout << "Precision = ";
+					std::cin >> nAp;
+					std::cout << "chA(" << value << ") = " << chA(value, nAp) << std::endl;
+
+					_getch();
+					break;
 			}
 		}
 		catch (const char* er) {
