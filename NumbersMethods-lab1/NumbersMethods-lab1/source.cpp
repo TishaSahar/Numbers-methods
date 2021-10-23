@@ -28,6 +28,7 @@ double cosA(angle a, double numAftPnt) {
     return cos;
 }
 
+
 double shA(double value, double numAftPnt)
 {
     double sh = value; double j = 1.0;
@@ -48,6 +49,10 @@ double chA(double value, double numAftPnt)
     return ch;
 
 }
+
+double shA(double  a, double numAftPnt) { return a; }
+double chA(double  a, double numAftPnt) { return a; }
+
 
 double lnA(double value, double numAftPnt) {
     double ln = 0.0;
