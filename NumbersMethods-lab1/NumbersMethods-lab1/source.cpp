@@ -7,7 +7,7 @@ double fac(int n) {
         tmp = tmp + 1.0;
         f = f * tmp;
     }
-    //std::cout << f << std::endl;
+
     return f;
 }
 
@@ -49,9 +49,6 @@ double chA(double value, double numAftPnt)
     return ch;
 
 }
-
-double shA(double  a, double numAftPnt) { return a; }
-double chA(double  a, double numAftPnt) { return a; }
 
 
 double lnA(double value, double numAftPnt) {

@@ -12,13 +12,13 @@ int main() {
 		system("cls");
 
 		std::cout << "0. exit\n";
-		std::cout << "1. write angle\n";
-		std::cout << "2. write number\n";
+		std::cout << "1. enter the angle\n";
+		std::cout << "2. enter the number\n";
 		std::cout << "3. sin \n";
 		std::cout << "4. cos\n";
-		std::cout << "5. sh\n";
-		std::cout << "6. ch\n";
-		std::cout << "7. ln\n";
+		std::cout << "5. ln\n";
+		std::cout << "6. sh\n";
+		std::cout << "7. ch\n";
 
 		//char com = _getch();
 
@@ -48,65 +48,40 @@ int main() {
 				std::cin >> nAp;
 
 				std::cout << "sin(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
-					<< sinA(angle, nAp) << std::endl;
+								    << std::setprecision(nAp) << sinA(angle, nAp) << std::endl;
 				_getch();
 				break;
-			case '4':
-				angle.toRad();
+			case '4': 
+				angle.toRad();	
 				std::cout << "Precision = ";
 				std::cin >> nAp;
 
 				std::cout << "cos(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
-					<< cosA(angle, nAp) << std::endl;
+					<< std::setprecision(nAp) << cosA(angle, nAp) << std::endl;
 				_getch();
 				break;
-			case '5':
-				angle.toRad();
+			case '5': 	
 				std::cout << "Precision = ";
 				std::cin >> nAp;
-				std::cout << "shA(" << value << ") = " << shA(value, nAp) << std::endl;
+				std::cout << "ln(" << value << ") = " << std::setprecision(nAp) << lnA(value, nAp) << std::endl;
+				
 				_getch();
 				break;
+			case '6':
 
-			case '6': break;
+				std::cout << "Precision = ";
+				std::cin >> nAp;
+				std::cout << "shA(" << value << ") = " << std::setprecision(nAp) << shA(value, nAp) << std::endl;
 
-			case '7': break;
+				_getch();
+				break;
+			case '7':
+				std::cout << "Precision = ";
+				std::cin >> nAp;
+				std::cout << "chA(" << value << ") = " << std::setprecision(nAp) << chA(value, nAp) << std::endl;
 
-					std::cout << "sin(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
-									    << std::setprecision(nAp) << sinA(angle, nAp) << std::endl;
-					_getch();
-					break;
-				case '4': 
-					angle.toRad();	
-					std::cout << "Precision = ";
-					std::cin >> nAp;
-
-					std::cout << "cos(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
-						<< std::setprecision(nAp) << cosA(angle, nAp) << std::endl;
-					_getch();
-					break;
-				case '5': 	
-					std::cout << "Precision = ";
-					std::cin >> nAp;
-					std::cout << "ln(" << value << ") = " << lnA(value, nAp) << std::endl;
-					
-					_getch();
-					break;
-				case '6':
-
-					std::cout << "Precision = ";
-					std::cin >> nAp;
-					std::cout << "shA(" << value << ") = " << shA(value, nAp) << std::endl;
-
-					_getch();
-					break;
-				case '7':
-					std::cout << "Precision = ";
-					std::cin >> nAp;
-					std::cout << "chA(" << value << ") = " << chA(value, nAp) << std::endl;
-
-					_getch();
-					break;
+				_getch();
+				break;
 			}
 		}
 		catch (const char* er) {
