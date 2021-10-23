@@ -25,27 +25,52 @@ int main() {
 		char op;
 		std::cin >> op;
 		try {
-			switch(op) {
-				case '0': return 0; break;
-				case '1': {
-					std::cout << "angle = ";
-					std::cin >> angle.grad;
-					//std::cout << "* ";
-					std::cin >> angle.min;
-					//std::cout << "' ";
-					std::cin >> angle.sec;
-					//std::cout << "'' ";
-					//return 0;
-					break;
-				}
-				case '2': 
-					std::cout << "value = ";
-					std::cin >> value;
-					break;
-				case '3':
-					angle.toRad();
-					std::cout << "Precision = ";
-					std::cin >> nAp;
+			switch (op) {
+			case '0': return 0; break;
+			case '1': {
+				std::cout << "angle = ";
+				std::cin >> angle.grad;
+				//std::cout << "* ";
+				std::cin >> angle.min;
+				//std::cout << "' ";
+				std::cin >> angle.sec;
+				//std::cout << "'' ";
+				//return 0;
+				break;
+			}
+			case '2':
+				std::cout << "value = ";
+				std::cin >> value;
+				break;
+			case '3':
+				angle.toRad();
+				std::cout << "Precision = ";
+				std::cin >> nAp;
+
+				std::cout << "sin(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
+					<< sinA(angle, nAp) << std::endl;
+				_getch();
+				break;
+			case '4':
+				angle.toRad();
+				std::cout << "Precision = ";
+				std::cin >> nAp;
+
+				std::cout << "cos(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
+					<< cosA(angle, nAp) << std::endl;
+				_getch();
+				break;
+			case '5':
+				angle.toRad();
+				std::cout << "Precision = ";
+				std::cin >> nAp;
+				std::cout << "shA(" << value << ") = " << shA(value, nAp) << std::endl;
+				_getch();
+				break;
+
+			case '6': break;
+
+			case '7': break;
 
 					std::cout << "sin(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
 									    << std::setprecision(nAp) << sinA(angle, nAp) << std::endl;
@@ -94,5 +119,4 @@ int main() {
 
 	return 0;
 }
-
 
