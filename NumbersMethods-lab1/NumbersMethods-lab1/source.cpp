@@ -62,5 +62,33 @@ double lnA(double value, double numAftPnt) {
     for (int i = 1; i <= numAftPnt; i++) {
         ln = ln + pow(-1.0, i + 1) * pow(value, i) / i;
     }
-
+    return ln;
 }
+
+
+
+
+
+
+double supa(double X) {  // Верхняя граница для "а" и/или "b"
+    return X + 0.00005;
+}
+double infa(double X) {	  // Нижняя граница для "a" и/или "b"
+    return X - 0.0005;
+}
+
+double supA(double a, double b) { // Верхняя граница функции А
+    return (exp(supa(a)) + sqrt(supa(b)))/log(infa(a) + infa(b)*infa(b));
+}
+double infA(double a, double b) { // Нижняя граница функции А
+    return (exp(infa(a)) + sqrt(infa(b))) / log(supa(a) + supa(b) * supa(b));
+}
+
+double deltaA(double a, double b) {
+    return (supA(a, b) - infA(a, b)) / 2;
+}
+
+double A(double a, double b) {
+    return (supA(a, b) + infA(a, b)) / 2;
+}
+

@@ -2,7 +2,10 @@
 
 #include <iostream>
 #include <cmath>
-
+#include <iomanip>
+#include <string>
+#include <sstream>
+												// 1-е задание
 struct angle {
 	double grad = 0;
 	double min = 0;
@@ -28,3 +31,17 @@ double chA(double value, double numAftPnt);
 
 
 double lnA(double x, double numAftPnt);
+
+												// 2-е задание
+
+double supa(double X);	  // Верхняя граница для "а" и/или "b"
+double infa(double X);	  // Нижняя граница для "a" и/или "b"
+
+double supA(double a, double b); // Верхняя граница функции А
+double infA(double a, double b); // Нижняя граница функции А
+
+
+double deltaA(double a, double b); // Погрешнисть вычисления функции А
+double A(double a = 2.156, double b = 0.9270); // Вычисление функции А по методу границ
+
+

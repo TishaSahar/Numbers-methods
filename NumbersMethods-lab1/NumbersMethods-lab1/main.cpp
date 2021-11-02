@@ -1,6 +1,6 @@
 #include "source.h"
 #include <conio.h>
-#include <iomanip>
+
 
 int main() {
 
@@ -19,6 +19,7 @@ int main() {
 		std::cout << "5. ln\n";
 		std::cout << "6. sh\n";
 		std::cout << "7. ch\n";
+		std::cout << "8. funk A\n";
 
 		//char com = _getch();
 
@@ -48,11 +49,11 @@ int main() {
 				std::cin >> nAp;
 
 				std::cout << "sin(" << angle.grad << "*" << angle.min << "'" << angle.sec << "'') = "
-								    << std::setprecision(nAp) << sinA(angle, nAp) << std::endl;
+					<< std::setprecision(nAp) << sinA(angle, nAp) << std::endl;
 				_getch();
 				break;
-			case '4': 
-				angle.toRad();	
+			case '4':
+				angle.toRad();
 				std::cout << "Precision = ";
 				std::cin >> nAp;
 
@@ -60,11 +61,11 @@ int main() {
 					<< std::setprecision(nAp) << cosA(angle, nAp) << std::endl;
 				_getch();
 				break;
-			case '5': 	
+			case '5':
 				std::cout << "Precision = ";
 				std::cin >> nAp;
 				std::cout << "ln(" << value << ") = " << std::setprecision(nAp) << lnA(value, nAp) << std::endl;
-				
+
 				_getch();
 				break;
 			case '6':
@@ -80,6 +81,12 @@ int main() {
 				std::cin >> nAp;
 				std::cout << "chA(" << value << ") = " << std::setprecision(nAp) << chA(value, nAp) << std::endl;
 
+				_getch();
+				break;
+			case '8':
+				std::cout << "Precision = ";
+				std::cin >> nAp;
+				std::cout << std::setprecision(nAp) << A() << std::endl;
 				_getch();
 				break;
 			}
