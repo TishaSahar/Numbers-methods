@@ -92,3 +92,26 @@ double A(double a, double b) {
     return (supA(a, b) + infA(a, b)) / 2;
 }
 
+                                            // »нтерпол€ци€
+
+double monom(double x, int j, int n, double* arg) {
+    double m = 1.0;
+
+    for (int k = 0; k <= n; k++) {
+        if (j == k) continue;
+        m *= (x - arg[k]);
+        m /= (arg[j] - arg[k]);
+    }
+    
+    return m;
+}
+
+double Lagrange(double x, int n, double* arg, double* func) {
+    double L = 0.0;
+
+    for (int j = 0; j < n; j++) {
+        L += func[j] * monom(x, j, n, arg);
+    }
+
+    return L;
+}

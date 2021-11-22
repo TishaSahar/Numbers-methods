@@ -45,3 +45,7 @@ double deltaA(double a, double b); // Погрешнисть вычисления функции А
 double A(double a = 2.156, double b = 0.9270); // Вычисление функции А по методу границ
 
 
+												// 3-е задарние
+
+double monom(double x = 0.0, int j = 0, int n = 5, double* arg = NULL);
+double Lagrange(double x = 0.0, int n = 5, double* arg = {}, double* func = {});
