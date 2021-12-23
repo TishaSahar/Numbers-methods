@@ -1,11 +1,11 @@
-#pragma once
+п»ї#pragma once
 
 #include <iostream>
 #include <cmath>
 #include <iomanip>
 #include <string>
 #include <sstream>
-												// 1-е задание
+													// 1-СЏ Р»Р°Р±Р°
 struct angle {
 	double grad = 0;
 	double min = 0;
@@ -18,34 +18,53 @@ struct angle {
 };
 
 
-double fac(int n);
+//double fac(int n);
 
 
-double sinA(angle a, int numAftPnt);
-double cosA(angle a, double numAftPnt);
+double sinA(double x, int nAp);
+double cosA(double x, int nAp);
 
 
-double shA(double value, double numAftPnt);
-double chA(double value, double numAftPnt);
+double shA(double value, int nAp);
+double chA(double value, int nAp);
 
 
 
-double lnA(double x, double numAftPnt);
+double lnA(double value, int nAp);
 
-												// 2-е задание
+												// 2-СЏ Р»Р°Р±Р°
 
-double supa(double X);	  // Верхняя граница для "а" и/или "b"
-double infa(double X);	  // Нижняя граница для "a" и/или "b"
+double supa(double X);	  
+double infa(double X);	  
 
-double supA(double a, double b); // Верхняя граница функции А
-double infA(double a, double b); // Нижняя граница функции А
-
-
-double deltaA(double a, double b); // Погрешнисть вычисления функции А
-double A(double a = 2.156, double b = 0.9270); // Вычисление функции А по методу границ
+double supA(double a, double b); 
+double infA(double a, double b); 
 
 
-												// 3-е задарние
+double deltaA(double a, double b); 
+double A(double a = 2.156, double b = 0.9270); // РЎС‡РёС‚Р°РµРј С„СѓРЅРєС†РёСЋ РјРµС‚РѕРґРѕРј РіСЂР°РЅРёС†
+
+
+												// 3-СЏ Р»Р°Р±Р°
 
 double monom(double x = 0.0, int j = 0, int n = 5, double* arg = NULL);
 double Lagrange(double x = 0.0, int n = 5, double* arg = {}, double* func = {});
+
+												// 4-СЏ Р»Р°Р±Р°
+
+double _derivative(double x, double h); // ДЋД‘ДЌГЎГ«ДЌД‡ДєГ­Г­Г®Дє Г§Г­Е•Г·ДєГ­ДЌДє ДЏД‘Г®ДЌГ§ГўГ®Г¤Г­Г®Г©
+
+double supX(double X, double h);  // Г‚ДєД‘Е‘Г­Л™Л™ ДѓД‘Е•Г­ДЌГ¶Е• Г¤Г«Л™ x+h
+
+double infX(double X, double h);  // ГЌДЌД‡Г­Л™Л™ ДѓД‘Е•Г­ДЌГ¶Е• Г¤Г«Л™ x-h
+
+double derivative(double x);   // ДЋД‘Г®ДЌГ§ГўГ®Г¤Г­Е•Л™ exp(x)
+
+double deltaX(double x, double h); // Е”ГЎЕ„Г®Г«ЕЈГ­Е€Е•Л™ ДЏД‘Г®ДѓД‘ДєЕ™Г­Г®Е„Е€Гј
+
+double M3(double x, double h); // ДГ®Г­Е„Е€Е•Г­Е€Е• Дљ3
+
+double searchH(double x, double h);  // ГЌЕ•Е‘Г®Д‡Г¤ДєГ­ДЌДє Г®ДЏЕ€ДЌД›Е•Г«ГјГ­Г®ДѓГ® Е™Е•ДѓЕ•
+
+
+													//
