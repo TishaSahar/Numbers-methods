@@ -111,7 +111,7 @@ int main() {
 				std::cin >> X;
 				std::cout << "Enter h: ";
 				std::cin >> h;
-				std::cout << "Precision = ";
+				std::cout << "Number of operations = ";
 				std::cin >> nAp;
 				std::cout << std::setprecision(nAp) << std::endl;
 				std::cout << deltaX(X, h) << std::endl;
@@ -139,19 +139,22 @@ int main() {
 				if (order == 1) {
 					std::cout << "\n RK2" << std::endl;
 					for (int i = 1; i <= nAp; i ++) {
-						std::cout << "\t solution:" << std::setprecision(nAp) << RK2(x0, y0, i) <<
+						std::cout << "Iteration: " << i << 
+							"\t solution:" << std::setprecision(nAp) << RK2(x0, y0, i) <<
 							"\t	\t eps = " << std::setprecision(2 * i) << epsRK2(x0, y0, i) << std::endl;
 					}
 
 					std::cout << "\n RK3" << std::endl;
 					for (int i = 1; i <= nAp; i++) {
-						std::cout << "\t solution:" << std::setprecision(nAp) << RK3(x0, y0, i) <<
+						std::cout << "Iteration: " << i << 
+							"\t solution:" << std::setprecision(nAp) << RK3(x0, y0, i) <<
 							"\t	\t eps = " << std::setprecision(2 * i) << epsRK3(x0, y0, i) << std::endl;
 					}
 
 					std::cout << "\n RK4" << std::endl;
 					for (int i = 1; i <= nAp; i ++) {
-						std::cout << "\t solution:" << std::setprecision(nAp) << RK4(x0, y0, i) <<
+						std::cout << "Iteration: " << i <<
+							"\t solution:" << std::setprecision(nAp) << RK4(x0, y0, i) <<
 							"\t	\t eps = " << std::setprecision(2 * i) << epsRK4(x0, y0, i) << std::endl;
 					}
 					_getch();
