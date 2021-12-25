@@ -162,85 +162,72 @@ double searchH(double x, double h)
     //std::cout << M3(x,h) << std::endl;
     //std::cout << (3.0 * E) / M3(x, h) << std::endl;
     //std::cout << _derivative(x, h) << std::endl;
-    return pow((3.0 * E) / M3(x, h), (1.0 / 3.0));                                       // 
-}
+    return pow((3.0 * E) / M3(x, h), (1.0 / 3.0));                                      
+} 
 
                                                         // 5-я лаба
+                                                        // Решение ДУ dy/dx = y - x
 
 double RK2(double x0, double y0, int n) {
-    double xtemp = x0, ytemp = y0, ftemp;
-    double h = 1 / n;
+    double tmpX = x0, tmpY = y0, tmpF;
+    double h = double(1.0/ n);
 
     for (int i = 0; i < n; i++) {
-        ftemp = ytemp - xtemp;
-        ytemp = ytemp + h * 0.5 * (ftemp + ytemp + h * ftemp - xtemp - h);
-
-        xtemp += h;
-
+        tmpF = tmpY - tmpX;
+        tmpY = tmpY + h * 0.5 *(tmpF + tmpY + h * tmpF - tmpX - h);
+        tmpX += h;
     }
 
-    std::cout << "Метод Рунге-Кутта 2 порядка: " << ytemp << std::endl;
-    return ytemp;
+    return tmpY;
+}
+
+double epsRK2(double x0, double y0, int n) {
+    return abs(RK2(x0, y0, n) - RK2(x0, y0, 2 * n));
 }
 
 
 double RK3(double x0, double y0, int n) {
-    double xtemp = x0, ytemp = y0, ftemp;
-    double h = 1 / n;
+    double tmpX = x0, tmpY = y0, tmpF;
+    double h = double(1.0 / n);
     double k1, k2, k3;
 
     for (int i = 0; i < n; i++) {
-        k1 = h * (ytemp - xtemp);
-        k2 = h * (ytemp + k1 / 2 - xtemp - h / 2);
-        k3 = h * (ytemp - k1 + 2 * k2 - xtemp - h);
+        k1 = h * (tmpY - tmpX);
+        k2 = h * (tmpY + k1 / 2.0 - tmpX - h / 2.0);
+        k3 = h * (tmpY - k1 + 2.0 * k2 - tmpX - h);
 
-        ytemp = ytemp + (k1 + 4 * k2 + k3) / 6;
-
-        xtemp += h;
-
+        tmpY = tmpY + (k1 + 4.0 * k2 + k3) / 6.0;
+        tmpX += h;
     }
 
-    std::cout << "Метод Рунге-Кутты 3 порядка: " << ytemp << std::endl;
-    return ytemp;
+    return tmpY;
 }
 
+double epsRK3(double x0, double y0, int n) {
+    return abs(RK3(x0, y0, n) - RK3(x0, y0, 2 * n));
+}
 
 double RK4(double x0, double y0, int n) {
-    double xtemp = x0, ytemp = y0, ytemp1 = y0, ftemp;
-    double h = 1 / n, h1;
+    double tmpX = x0, tmpY = y0, tmpF;
+    double h = double(1.0 / n), h1;
     double k1, k2, k3, k4, k11, k21, k31, k41;
     double e;
 
     for (int i = 0; i < n; i++) {
-        k1 = ytemp - xtemp;
-        k2 = ytemp + h * k1 / 2 - xtemp - h / 2;
-        k3 = ytemp + h * k2 / 2 - xtemp - h / 2;
-        k4 = ytemp + h * k3 - xtemp - h;
+        k1 = tmpY - tmpX;
+        k2 = tmpY + h * k1 / 2.0 - tmpX - h / 2.0;
+        k3 = tmpY + h * k2 / 2.0 - tmpX - h / 2.0;
+        k4 = tmpY + h * k3 - tmpX - h;
 
-        ytemp = ytemp + h * (k1 + 2 * k2 + 2 * k3 + k4) / 6;
-
-        /*h1 = h / 2;
-
-        k1 = ytemp1 - xtemp;
-        k2 = ytemp1 + h1 * k1 / 2 - xtemp - h1 / 2;
-        k3 = ytemp1 + h1 * k2 / 2 - xtemp - h1 / 2;
-        k4 = ytemp1 + h1 * k3 - xtemp - h1;
-
-        ytemp1 = ytemp1 + h1 * (k1 + 2 * k2 + 2 * k3 + k4) / 6;
-
-        e = (2 ^ 4) * (ytemp1 - ytemp) / (2 ^ 4 - 1);
-
-        */
-
-        xtemp += h;
-
-
+        tmpY = tmpY + h * (k1 + 2.0 * k2 + 2.0 * k3 + k4) / 6.0;
+        tmpX += h;
     }
 
-    std::cout << "Метод Рунге-Кутты 4 порядка: " << ytemp << std::endl;
-    return ytemp;
+    return tmpY;
 }
 
-
+double epsRK4(double x0, double y0, int n) {
+    return abs(RK4(x0, y0, n) - RK4(x0, y0, 2 * n));
+}
 
 

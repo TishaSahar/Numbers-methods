@@ -23,10 +23,11 @@ int main() {
 		std::cout << "8. funk A\n";
 		std::cout << "9. lagrange polynom\n";
 		std::cout << "10. funk exp(x)\n";
+		std::cout << "11. Runge-Kutt (2, 3, 4)\n";
 
 		//char com = _getch();
 
-		enum TASKS { EXIT = 0, LAB_1_1, LAB_1_2, LAB_1_3, LAB_1_4, LAB_1_5, LAB_1_6, LAB_1_7, LAB_2, LAB_3, LAB_4 };
+		enum TASKS { EXIT = 0, LAB_1_1, LAB_1_2, LAB_1_3, LAB_1_4, LAB_1_5, LAB_1_6, LAB_1_7, LAB_2, LAB_3, LAB_4, LAB_5 };
 
 		int op;
 		std::cin >> op;
@@ -119,6 +120,65 @@ int main() {
 				std::cout << std::setprecision(nAp) << std::endl;
 				std::cout << searchH(X, h) << std::endl;
 				_getch();
+				break;
+			case LAB_5:
+				double x0 = 0.0, y0 = 2.0;
+				std::cout << "Solution dy/dx = y - x by the RK method" << std::endl;
+
+				std::cout << "x0 = ";
+				std::cin >> x0;
+				std::cout << "y0 = ";
+				std::cin >> y0;
+
+				std::cout << "Precision = ";
+				std::cin >> nAp;
+
+				std::cout << "RK order = ";
+				int order = 3;
+				std::cin >> order;
+				if (order == 1) {
+					std::cout << "\n RK2" << std::endl;
+					for (int i = 1; i <= nAp; i ++) {
+						std::cout << "\t solution:" << std::setprecision(nAp) << RK2(x0, y0, i) <<
+							"\t	\t eps = " << std::setprecision(2 * i) << epsRK2(x0, y0, i) << std::endl;
+					}
+
+					std::cout << "\n RK3" << std::endl;
+					for (int i = 1; i <= nAp; i++) {
+						std::cout << "\t solution:" << std::setprecision(nAp) << RK3(x0, y0, i) <<
+							"\t	\t eps = " << std::setprecision(2 * i) << epsRK3(x0, y0, i) << std::endl;
+					}
+
+					std::cout << "\n RK4" << std::endl;
+					for (int i = 1; i <= nAp; i ++) {
+						std::cout << "\t solution:" << std::setprecision(nAp) << RK4(x0, y0, i) <<
+							"\t	\t eps = " << std::setprecision(2 * i) << epsRK4(x0, y0, i) << std::endl;
+					}
+					_getch();
+				}
+				if (order == 2) {
+					for (int i = 1; i <= nAp; i++)
+						std::cout << "Iterations: " << i <<
+												std::setprecision(nAp) << "\t solution RK2:" << RK2(x0, y0, i) << 
+													"\t	\t eps = " << std::setprecision(2*i)<< epsRK2(x0, y0, i) << std::endl;
+					_getch();
+				}
+				else
+					if (order == 3) {
+						for (int i = 1; i < nAp; i ++)
+							std::cout << "Iterations: " << i <<
+														std::setprecision(nAp) << "\t solution RK3:" << RK3(x0, y0, i) <<
+													"\t	\t eps = " << std::setprecision(2*i) << epsRK3(x0, y0, i) << std::endl;
+						_getch();
+					}
+					else
+						if (order == 4) {
+							for (int i = 1; i < nAp; i ++)
+								std::cout << "Iterations: " << i <<
+													std::setprecision(nAp) << "\t solution RK4:" << RK4(x0, y0, i) <<
+													"\t	\t eps = " << std::setprecision(2*i) << epsRK4(x0, y0, i) << std::endl;
+							_getch();
+						}
 				break;
 			}
 		}

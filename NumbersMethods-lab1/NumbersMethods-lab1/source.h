@@ -52,19 +52,27 @@ double Lagrange(double x = 0.0, int n = 5, double* arg = {}, double* func = {});
 
 												// 4-я лаба
 
-double _derivative(double x, double h); // Ďđčáëčćĺííîĺ çíŕ÷ĺíčĺ ďđîčçâîäíîé
+double _derivative(double x, double h); // 
 
-double supX(double X, double h);  // Âĺđőí˙˙ ăđŕíčöŕ äë˙ x+h
+double supX(double X, double h);  // 
 
-double infX(double X, double h);  // Íčćí˙˙ ăđŕíčöŕ äë˙ x-h
+double infX(double X, double h);  // 
 
-double derivative(double x);   // Ďđîčçâîäíŕ˙ exp(x)
+double derivative(double x);   // 
 
-double deltaX(double x, double h); // Ŕáńîëţíňŕ˙ ďđîăđĺříîńňü
+double deltaX(double x, double h); //
 
-double M3(double x, double h); // Ęîíńňŕíňŕ Ě3
+double M3(double x, double h); //
 
-double searchH(double x, double h);  // Íŕőîćäĺíčĺ îďňčěŕëüíîăî řŕăŕ
+double searchH(double x, double h);  //
 
 
-													//
+													// 5-я лаба
+
+double RK2(double x0, double y0, int n);
+double RK3(double x0, double y0, int n);
+double RK4(double x0, double y0, int n);
+
+double epsRK2(double x0, double y0, int n);
+double epsRK3(double x0, double y0, int n);
+double epsRK4(double x0, double y0, int n);
